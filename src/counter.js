@@ -100,4 +100,37 @@ export function setupCounter() {
   //   return n * factorial(n-1);
   // }
   // console.log(factorial(5))
+
+//   const arr = [7, 1, 3, 2, 5, 6, 9, 8, 19, 12, 0];
+
+// function selection(arr) {
+//     for (let i = 0; i < arr.length-1; i++) {
+//         let min = i;
+//         for (let j = i + 1; j < arr.length; j++) {
+//             if (arr[min] > arr[j]) {
+//                 min = j;
+//             }
+//         }
+//         let temp = arr[min];
+//         arr[min] = arr[i];
+//         arr[i] = temp;
+//     }
+//     return
+// }
+// console.log(selection(arr));
+
+const arr = [7, 1, 3, 2, 5, 6, 9, 8, 19, 12, 0];
+function insertion(arr) {
+  for (let i = 1; i < arr.length; i++) {
+    let curr = arr[i];
+    let prev = i-1;
+    while(arr[prev] > curr && prev >=0) {
+      arr[prev+1] = arr[prev];
+      prev--;
+    }
+    arr[prev+1] = curr;
+  }
+  return arr;
+}
+console.log(insertion(arr));
 }
