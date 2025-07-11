@@ -1,4 +1,6 @@
 export function setupCounter() {
+
+  /*Merge Arrays */
   // const nums1 = [1, 2, 3, 0, 0, 0];
   // const nums2 = [2, 5, 6];
   // function mergeArr(nums1, m, nums2, n) {
@@ -19,6 +21,8 @@ export function setupCounter() {
   //   return nums1;
   // }
   // console.log(mergeArr(nums1, 3, nums2, 3));
+
+  /*Move zeroes */
   // function moveZeroes(arr) {
   //   let x = 0;
   //   for (let i = 0; i < arr.length; i++) {
@@ -33,6 +37,9 @@ export function setupCounter() {
   //   return arr;
   // }
   // console.log(moveZeroes([0, 1, 2, 0, 0, 3, 4, 0]));
+
+
+  /* Max Consecutive one*/
   // function maxConsecutiveOnes(arr) {
   //   let count = 0;
   //   let maxCount = 0;
@@ -47,6 +54,8 @@ export function setupCounter() {
   //   return Math.max(maxCount, count);
   // }
   // console.log(maxConsecutiveOnes([1, 1, 0, 1, 1, 1, 9, 1, 1]));
+
+ /* Missing number */
   // function missingNumber(arr) {
   //   const n = arr.length;
   //   const sum = (n * (n + 1)) / 2;
@@ -56,6 +65,8 @@ export function setupCounter() {
   //   return sum - sumExceptMissing;
   // }
   // console.log(missingNumber([0, 1, 2, 4, 5, 3]));
+
+ /* Single number */
   // function singleNumber(arr) {
   //   let hashMap = {};
   //   for (let i = 0; i < arr.length; i++) {
@@ -77,6 +88,9 @@ export function setupCounter() {
   //   return missing;
   // }
   // console.log(singleNumber([1, 1, 2, 2, 3, 4, 4]));
+
+/* Recursions */
+
   // function sumFirstn(n) {
   //   if(n===0) {
   //     return 0;
@@ -84,6 +98,7 @@ export function setupCounter() {
   //   return n + sumFirstn(n-1);
   // }
   // console.log( sumFirstn(10))
+
   // const arr = [1, 2, 3, 4];
   // function oddSumArr(n) {
   //   const isOdd = (arr[n]%2!==0);
@@ -101,6 +116,8 @@ export function setupCounter() {
   // }
   // console.log(factorial(5))
 
+
+  /*Selection sort */
 //   const arr = [7, 1, 3, 2, 5, 6, 9, 8, 19, 12, 0];
 
 // function selection(arr) {
@@ -118,19 +135,176 @@ export function setupCounter() {
 //     return
 // }
 // console.log(selection(arr));
+ 
 
-const arr = [7, 1, 3, 2, 5, 6, 9, 8, 19, 12, 0];
-function insertion(arr) {
-  for (let i = 1; i < arr.length; i++) {
-    let curr = arr[i];
-    let prev = i-1;
-    while(arr[prev] > curr && prev >=0) {
-      arr[prev+1] = arr[prev];
-      prev--;
-    }
-    arr[prev+1] = curr;
-  }
-  return arr;
+/*Insertion Sort */
+// const arr = [7, 1, 3, 2, 5, 6, 9, 8, 19, 12, 0];
+// function insertion(arr) {
+//   for (let i = 1; i < arr.length; i++) {
+//     let curr = arr[i];
+//     let prev = i-1;
+//     while(arr[prev] > curr && prev >=0) {
+//       arr[prev+1] = arr[prev];
+//       prev--;
+//     }
+//     arr[prev+1] = curr;
+//   }
+//   return arr;
+// }
+// console.log(insertion(arr));
+
+/*Merge Sort */
+
+// const arr = [7, 1, 3, 2, 5, 6, 9, 8, 19, 12, 0];
+
+// function mergeSort(arr) {
+//   if(arr.length <=1) {
+//     return arr;
+//   }
+
+//   let  mid = Math.floor(arr.length/2);
+//   let left = mergeSort(arr.slice(0,mid));
+//   let right = mergeSort(arr.slice(mid));
+//   return merge(left,right);
+// }
+
+// function merge(left,right) {
+//   let res = [];
+//   let i =0; let j=0;
+//   while(i <left.length && j <right.length) {
+//     if(left[i] < right[j]) {
+//       res.push(left[i]);
+//       i++;
+//     } else {
+//       res.push(right[j]) ;
+//         j++;
+//       }
+//     }
+//   return [...res, ...left.slice(i), ...right.slice(j)];
+// }
+// console.log(mergeSort(arr));
+
+
+/*LinkedList Basics 
+
+
+function Node(val) {
+  this.val = val;
+  this.next = null;
 }
-console.log(insertion(arr));
+
+var MyLinkedList = function() {
+  this.head = null;
+  this.tail = null;
+  this.size = 0;
+};
+
+/** 
+* @param {number} index
+* @return {number}
+*/
+// MyLinkedList.prototype.get = function(index) {
+//   if(index < 0 || index >= this.size) {
+//       return -1;
+//   }
+//   let curr = this.head;
+//   for(let i =0; i<index; i++) {
+//       curr = curr.next;
+//   }
+//   return curr.val;
+// };
+
+// /** 
+// * @param {number} val
+// * @return {void}
+// */
+// MyLinkedList.prototype.addAtHead = function(val) {
+//   let newNode = new Node(val);
+//   newNode.next = this.head;
+//   this.head = newNode;
+//   this.size++
+// };
+
+// /** 
+// * @param {number} val
+// * @return {void}
+// */
+// MyLinkedList.prototype.addAtTail = function(val) {
+//   let newNode = new Node(val);
+//   if(this.head === null) {
+//      this.head = newNode;
+//   } else {
+//   let current = this.head;
+//   while(current.next != null) {
+//       current = current.next;
+//   }
+//   current.next = newNode;
+// }
+// this.size++;
+
+// };
+
+// /** 
+// * @param {number} index 
+// * @param {number} val
+// * @return {void}
+// */
+// MyLinkedList.prototype.addAtIndex = function(index, val) {
+//   let newNode = new Node(val);
+//   let current = this.head;
+//   if(index === 0) {
+//       this.addAtHead(val);
+//       return;
+//   } else if(index === this.size) {
+//       this.addAtTail(val);
+//       return;
+//   } else  if(index < 0 || index >this.size) {
+//   return;
+//   } else {
+//   for(let i =0; i<index-1; i++) {
+//       current = current.next;
+//   }
+//   newNode.next = current.next;
+//   current.next = newNode;
+//   this.size++;
+//   }
+// };
+
+// /** 
+// * @param {number} index
+// * @return {void}
+// */
+// MyLinkedList.prototype.deleteAtIndex = function(index) { 
+// if(index < 0 || index >=this.size) {
+//   return;
+//   } else if(index === 0) {
+//       this.head = this.head.next;
+//   } else {
+//         let curr = this.head;
+//       for(let i=0 ; i< index-1; i++){
+//           curr = curr.next;
+//       }
+//       curr.next = curr.next.next;
+    
+//   }
+//     this.size--;
+// };
+
+
+/*Reverese Linked List */
+
+// var reverseList = function(head) {
+//   let prev = null;
+//   let curr = head;
+//   let temp;
+//   while(curr) {
+//       temp = curr.next;
+//       curr.next = prev;
+//       prev = curr;
+//       curr = temp;
+//   }
+//   head = prev;
+//   return head;
+// };
 }
+
