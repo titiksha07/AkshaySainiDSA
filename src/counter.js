@@ -312,7 +312,11 @@ console.log(ll);
 //   return head;
 // };
 
+
+
+
 /*Linked list cycle*/
+
 
 // var hasCycle = function(head) {
 //   let curr = head;
@@ -328,7 +332,11 @@ console.log(ll);
 //   return false;
 // };
 
+
+
+
 /* Palindrome in Linked List*/
+
 
 // var isPalindrome = function(head) {
 //   //find middle
@@ -364,7 +372,9 @@ console.log(ll);
 // };
 
 
+
 /*Remove Linked List Element */
+
 
 // var removeElements = function(head, val) {
 //   let sentinel = new ListNode();
@@ -379,5 +389,25 @@ console.log(ll);
 //   }
 //   return sentinel.next;
 //};
+
+
+/*Remove nth node from end */
+
+// var removeNthFromEnd = function(head, n) {
+//   let sentinel = new ListNode();
+//   sentinel.next = head;
+//   let prev = sentinel;
+//   let length = 0;
+//   while(head) {
+//       head = head.next;
+//       length++;
+//   }
+//   let prevPos = length -n;
+//   for(let i=0; i<prevPos; i++) {
+//       prev = prev.next;
+//   }
+//   prev.next = prev.next.next;
+//   return sentinel.next;
+// };
 }
 
