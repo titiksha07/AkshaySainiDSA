@@ -507,6 +507,38 @@ console.log(ll);
 //   }
 //   return dummy.next;
 // };
+
+
+
+/* Rotate list by k to the right */
+
+// var rotateRight = function(head, k) {
+//   if(!head || !head.next) {
+//       return head;
+//   }
+//   let length = 0;
+//   let slow = head;
+//   let fast = head;
+//   let curr = head;
+//   while(curr) {
+//       curr = curr.next;
+//       length++;
+//   }
+//   k = k%length; // logic to understand how to eliminate unnecessary rotations
+//   for(let i=0; i<k; i++) {
+//       fast = fast.next;
+//   }
+
+//   while(fast.next) {
+//       fast = fast.next;
+//       slow = slow.next;
+//   }
+//   fast.next = head;
+//   let newHead = slow.next;
+//   slow.next = null;
+//   return newHead;
+
+// };
 }
 
 
