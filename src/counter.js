@@ -409,5 +409,40 @@ console.log(ll);
 //   prev.next = prev.next.next;
 //   return sentinel.next;
 // };
+
+
+/*Remove elements from nth position using 1 pass*/
+
+// var removeNthFromEnd = function(head, n) {
+//     let sentinel = new ListNode();
+//     sentinel.next = head;
+//     let fast = sentinel;
+//     let slow = sentinel;
+//     for(let i=0; i<n; i++) {
+//         fast = fast.next;
+//     } 
+
+//     while(fast.next) {
+//         slow = slow.next;
+//         fast = fast.next;
+//     }
+//     slow.next = slow.next.next;
+//     return sentinel.next;
+// };
+
+/* Remove duplicates from Sorted List */
+
+// var deleteDuplicates = function(head) {
+//     let curr = head;
+//     while(curr && curr.next) {
+//         if(curr.val === curr.next.val) {
+//             curr.next = curr.next.next;
+//         } else {
+//             curr = curr.next;
+//         }
+//     }
+//     return head;
+// };
 }
+
 
