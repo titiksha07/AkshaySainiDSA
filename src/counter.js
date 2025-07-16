@@ -463,6 +463,26 @@ console.log(ll);
 // odd.next = evenStart
 // return head;
 // };
+
+
+/* Add two numbers */ 
+
+var addTwoNumbers = function(l1, l2) {
+  let dummy = new ListNode();
+  let curr = dummy;
+  let carry = 0;
+  while(l1 || l2 || carry) {
+     let sum = (l1 ? l1.val : 0) +   (l2 ? l2.val : 0) + carry;
+     carry = Math.floor(sum/10);
+     let digit = sum%10;
+     curr.next = new ListNode(digit);
+     curr = curr.next; // this is for creating the new LL
+     l1 = l1?.next; // this is for traversing the given lists
+     l2 = l2?.next;
+  }
+  return dummy.next;
+     
+ };
 }
 
 
